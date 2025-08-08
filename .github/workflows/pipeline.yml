@@ -25,6 +25,7 @@ jobs:
       - name: test
         run: npm test
       - name: e2e tests
+        if: ${{ github.event_name == 'push' }}
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
